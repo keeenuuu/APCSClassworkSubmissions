@@ -1,0 +1,73 @@
+/**
+ * The {@code Cake} class represents a cake, with the following attributes:
+ * flavor, a String denoting the flavor of the cake; and
+ * layerAmount, an int denoting the amount of layers in a cake.
+ * @author Keanu
+ */
+public class Cake {
+	/**
+	 * attributes of a Cake object: flavor and layerAmount
+	 */
+	String flavor; //the flavor of a Cake object
+	int layerAmount; //the amount of layers in a Cake object
+	/**
+	 * Cake constructor: creates Cake object
+	 * @param str: the flavor of the Cake
+	 * @param i: the amount of layers of the Cake
+	 */
+	public Cake(String str, int i)
+	{
+		this.flavor = str; //sets Cake object's flavor as str parameter
+		this.layerAmount = i; //set's Cake object's layerAmount as i parameter		
+	}
+	/**
+	 *
+	 * Second Cake constructor: creates Cake object.
+	 * the amountLayer attribute is set to 1
+	 * @param str: the flavor of the cake
+	 */
+	public Cake(String str)
+	{
+		this.flavor = str; //set's Cake object's flavor as str parameter
+		this.layerAmount = 1; //set's Cake object's layerAmount as 1
+	}
+	/**
+	 * getFlavor method:
+	 * @return the flavor of the Cake as a String
+	 */
+	public String getFlavor()
+	{
+		return this.flavor; //returns flavor of Cake object
+	}
+	/**
+	 * getLayers method:
+	 * @return the amount of layers of the Cake as an int
+	 */
+	public int getLayers()
+	{
+		return this.layerAmount; //returns amount of layers of Cake object
+	}
+	/**
+	 * setFlavor method: changes flavor of Cake object
+	 * @param str: the new flavor of the Cake
+	 */
+	public void setFlavor(String str)
+	{
+		this.flavor = str; //changes flavor of Cake object to str
+	}
+	/**
+	 * tellIfTasty method: tells if Cake is tasty.
+	 * static: always print out "The cake is yummy!", regardless of attributes
+	 */
+	public static void tellIfTasty()
+	{
+		System.out.println("The cake is yummy!"); //prints out "The cake is yummy!"
+	}
+	/**
+	 * incrementLayer method: adds one layer to Cake object
+	 */
+	public void incrementLayer()
+	{
+		this.layerAmount++; //adds one layer to this.layerAmount
+	}
+}
