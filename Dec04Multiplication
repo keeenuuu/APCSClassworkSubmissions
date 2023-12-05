@@ -1,5 +1,6 @@
 /**
  * Multiplication class: multiplies two numbers together without the use of the asterisk (*) symbol
+ * @author Keanu
  */
 public class Multiplication 
 {
