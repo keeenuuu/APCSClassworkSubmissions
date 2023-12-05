@@ -1,17 +1,27 @@
+/**
+ * Multiplication class: multiplies two numbers together without the use of the asterisk (*) symbol
+ */
 public class Multiplication 
 {
 	public static void main(String[] args) 
 	{
-		multTwoNums(12, 35);
+		multTwoNums(12, 35); //call multTwoNums method, which takes in parameters 12 and 35
 	}
+	/**
+	 * multTwoNums method: runs a for loop to multiply the parameters together
+	 * @param x
+	 * @param y
+	 */
 	public static void multTwoNums(int x, int y)
 	{
-		int a = x;
-		int b = y;
-		for (int i = 1; i < b; i++)
+		int facOne = x; //declare first factor to be first parameter
+		int facTwo = y; //declare second factor to be second parameter
+		for (int i = 1; i < facOne; i++) //run a for loop, which initializes i to one and increments i until it is one less than the first factor
+		//(this accounts for the first factor)
 		{ 
-			a += (a / i);
+			facTwo += (facTwo / i); //divide the second factor by i (this step will always result in the same number - the second factor), and add it to the second factor
+			//(this accounts for the second factor)
 		}
-		System.out.println(a);
+		System.out.println(facTwo); //print out product, which is stored in the second factor variable
 	}
 }
