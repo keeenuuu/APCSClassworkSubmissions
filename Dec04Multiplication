@@ -1,12 +1,13 @@
 /**
- * Multiplication class: multiplies two numbers together without the use of the asterisk (*) symbol
+ * Multiplication class: multiplies two numbers together without the use of the asterisk (*) symbol.
+ * Multiplication - adding a number to itself a certain amount of times
  * @author Keanu
  */
-public class Multiplication 
+public class Dec04Multiplication 
 {
 	public static void main(String[] args) 
 	{
-		multTwoNums(12, 35); //call multTwoNums method, which takes in parameters 12 and 35
+		multTwoNums(3, 4); //call multTwoNums method, which takes in two parameters
 	}
 	/**
 	 * multTwoNums method: runs a for loop to multiply the parameters together
@@ -17,11 +18,12 @@ public class Multiplication
 	{
 		int facOne = x; //declare first factor to be first parameter
 		int facTwo = y; //declare second factor to be second parameter
-		for (int i = 1; i < facOne; i++) //run a for loop, which initializes i to one and increments i until it is one less than the first factor
-		//(this accounts for the first factor)
+		for (int i = 1; i < facOne; i++) //run a for loop, which initializes i to one and increments i until it is not less than the first factor
+		//this accounts for the first factor - determines how many times second factor is added to itself
 		{ 
-			facTwo += (facTwo / i); //divide the second factor by i (this step will always result in the same number - the second factor), and add it to the second factor
-			//(this accounts for the second factor)
+			facTwo += (facTwo / i); //divide the second factor by i and add it to the second factor
+			//the division will always result in the same number - the second factor
+			//this accounts for the second factor - adds factor to itself
 		}
 		System.out.println(facTwo); //print out product, which is stored in the second factor variable
 	}
