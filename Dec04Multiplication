@@ -1,0 +1,17 @@
+public class Multiplication 
+{
+	public static void main(String[] args) 
+	{
+		multTwoNums(12, 35);
+	}
+	public static void multTwoNums(int x, int y)
+	{
+		int a = x;
+		int b = y;
+		for (int i = 1; i < b; i++)
+		{ 
+			a += (a / i);
+		}
+		System.out.println(a);
+	}
+}
