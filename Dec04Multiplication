@@ -1,6 +1,6 @@
 /**
  * Multiplication class: multiplies two numbers together without the use of the asterisk (*) symbol.
- * Multiplication - adding a number to itself a certain amount of times
+ * Multiplication is adding a number to itself a certain amount of times.
  * @author Keanu
  */
 public class Dec04Multiplication 
@@ -22,8 +22,8 @@ public class Dec04Multiplication
 		//this accounts for the first factor - determines how many times second factor is added to itself
 		{ 
 			facTwo += (facTwo / i); //divide the second factor by i and add it to the second factor
-			//the division will always result in the same number - the second factor
-			//this accounts for the second factor - adds factor to itself
+			//the division will always result in the same number: the second factor
+			//this accounts for the second factor: adds factor to itself
 		}
 		System.out.println(facTwo); //print out product, which is stored in the second factor variable
 	}
