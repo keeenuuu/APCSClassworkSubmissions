@@ -1,0 +1,81 @@
+/**
+ * MathTasks class: performs mathematical calculations using Math class, wrapper classes, and self-created class
+ */
+class Dec07MathTasks 
+{
+	public static void main(String[] args) 
+	{
+		// #1
+		System.out.println((int)(Math.random()*10) + 1); //print out a randomly generated integer from 1-10 inclusive
+		
+		// #2
+		int intA = -36; //declare intA to be -36
+		int intB = +12; //declare intB to be +12
+		
+		// #3
+		double dubA = -100.0; //declare dubA to be -100.0
+		double dubB = 0.64; //declare dubB to be 0.64
+		
+		// #4
+		Integer integerA = intA; //instantiate Integer object, named integerA, and give it the same value as intA
+		Integer integerB = intB; //instantiate Integer object, named inteberB, and give it the same value as intB
+		
+		// #5
+		Double doubleA = dubA; //instantiate Double object, named doubleA, and give it the same value as dubA
+		Double doubleB = dubB; //instantiate Double object, named doubleB, and give it the same value as dubA
+		
+		// #6
+		expTwoNums(intA, intB); //call expTwoNums method, with a base of intA and an exponent of intB
+		
+		// #7
+		expTwoNums(integerA, integerB); //call expTwoNums method, with a base of integerA and an exponent of integerB
+		
+		// #8
+		expTwoNums((int)dubA, (int)dubB); //call expTwoNums method, with a base of dubA and an exponent of dubB. 
+		//dubA and dubB are casted as ints.
+		
+		// #9
+		expTwoNums(doubleA.intValue(), doubleB.intValue()); //call expTwoNums method, with a base of doubleA and an exponent of doubleB. 
+		//call intValue method to transform Double objects to Integer objects.
+		
+		// #10
+		System.out.println(Math.abs(intA)); //print out the absolute value of intA
+		System.out.println(Math.abs(integerA)); //print out the absolute value of integerA
+		System.out.println(Math.abs(dubA)); //print out the absolute value of dubA
+		System.out.println(Math.abs(intA)); //print out the absolute value of intA
+		
+		// #11
+		System.out.println(Math.sqrt(dubB)); //print out the square root of dubB
+		System.out.println(Math.sqrt(doubleB)); //print out the square root of doubleB
+		
+		// #12
+		System.out.println(Math.sqrt(Math.abs(intA))); //print out the square root of the absolute value of intA
+		System.out.println(Math.sqrt(Math.abs(integerA))); //print out the square root of the absolute value of integerA
+		
+		// #13
+		System.out.println(Math.pow(dubB, dubA)); //print out dubB raised to the power of dubA
+		
+		// #14
+		System.out.println(Math.pow(intA, dubA)); //print out intA raised to the power of dubA
+		
+		// #15
+		System.out.println(Math.pow(doubleA, integerA)); //print out doubleA raised to the power of integerA
+	}
+	/**
+	 * expTwoNums method: takes in a base (x) and an exponent (y), and performs exponential calculation.
+	 * @param x
+	 * @param y
+	 */
+	public static void expTwoNums(int x, int y)
+	{
+		int base = x; //declare base as x
+		int exponent = y; //declare exponent as y
+		int constant = base; //declare a constant to be the base, to be used for calculation 
+		for (int i = 1; i < exponent; i++) //create a for loop, which declares i as 1 and increments it until it is not less than the exponent
+			//this ensures that the base is multiplied by itself for the correct amount of times
+		{ 
+			base *= constant; //multiply the base by the constant
+		}
+		System.out.println(base); //print out the result, stored in base variable
+	}
+}
