@@ -1,12 +1,16 @@
 /**
  * MathTasks class: performs mathematical calculations using Math class, wrapper classes, and self-created class
  */
-class Dec07MathTasks 
+class MathTasks
 {
 	public static void main(String[] args) 
 	{
 		// #1
 		System.out.println((int)(Math.random()*10) + 1); //print out a randomly generated integer from 1-10 inclusive
+		//call random method in Math class to generate double from 0-1,
+		//multiply result by 10 (to get ones place),
+		//cast as integer (to truncate),
+		//add one (to account for bounds)
 		
 		// #2
 		int intA = -36; //declare intA to be -36
@@ -25,18 +29,18 @@ class Dec07MathTasks
 		Double doubleB = dubB; //instantiate Double object, named doubleB, and give it the same value as dubA
 		
 		// #6
-		expTwoNums(intA, intB); //call expTwoNums method, with a base of intA and an exponent of intB
+		expTwoNums(intA, intB); //call expTwoNums method to perform exponential calculation with a base of intA and an exponent of intB
 		
 		// #7
-		expTwoNums(integerA, integerB); //call expTwoNums method, with a base of integerA and an exponent of integerB
+		expTwoNums(integerA, integerB); //call expTwoNums method to perform exponential calculation with a base of integerA and an exponent of integerB
 		
 		// #8
-		expTwoNums((int)dubA, (int)dubB); //call expTwoNums method, with a base of dubA and an exponent of dubB. 
-		//dubA and dubB are casted as ints.
+		expTwoNums((int)dubA, (int)dubB); //call expTwoNums method to perform exponential calculation with a base of dubA and an exponent of dubB 
+		//dubA and dubB are casted as integers
 		
 		// #9
-		expTwoNums(doubleA.intValue(), doubleB.intValue()); //call expTwoNums method, with a base of doubleA and an exponent of doubleB. 
-		//call intValue method to transform Double objects to Integer objects.
+		expTwoNums(doubleA.intValue(), doubleB.intValue()); //call expTwoNums method to perform exponential calculation with a base of doubleA and an exponent of doubleB 
+		//call intValue method from Double class to transform Double objects to Integer objects
 		
 		// #10
 		System.out.println(Math.abs(intA)); //print out the absolute value of intA
@@ -63,6 +67,7 @@ class Dec07MathTasks
 	}
 	/**
 	 * expTwoNums method: takes in a base (x) and an exponent (y), and performs exponential calculation.
+	 * exponentiation is multiplying a number by itself a certain amount of times.
 	 * @param x
 	 * @param y
 	 */
