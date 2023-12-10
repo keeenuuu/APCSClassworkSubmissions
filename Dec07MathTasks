@@ -1,7 +1,7 @@
 /**
  * MathTasks class: performs mathematical calculations using Math class, wrapper classes, and self-created class
  */
-class MathTasks
+class Dec07MathTasks
 {
 	public static void main(String[] args) 
 	{
