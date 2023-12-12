@@ -33,6 +33,11 @@ class Dec07MathTasks
 		
 		// #7
 		expTwoNums(integerA, integerB); //call expTwoNums method to perform exponential calculation with a base of integerA and an exponent of integerB
+		//Integer objects are "unboxed" into primitive ints within the method
+		
+		// **
+		expTwoNumbers(intA, intB); //call expTwoNumbers method to perform exponential calculation with a base of intA and an exponent of intB 
+		//primitive ints are "autoboxed" into Integer objects within the method
 		
 		// #8
 		expTwoNums((int)dubA, (int)dubB); //call expTwoNums method to perform exponential calculation with a base of dubA and an exponent of dubB 
@@ -66,12 +71,30 @@ class Dec07MathTasks
 		System.out.println(Math.pow(doubleA, integerA)); //print out doubleA raised to the power of integerA
 	}
 	/**
-	 * expTwoNums method: takes in a base (x) and an exponent (y), and performs exponential calculation.
+	 * expTwoNums method: takes in a integer base (x) and an integer exponent (y), and performs exponential calculation.
 	 * exponentiation is multiplying a number by itself a certain amount of times.
 	 * @param x
 	 * @param y
 	 */
 	public static void expTwoNums(int x, int y)
+	{
+		int base = x; //declare base as x
+		int exponent = y; //declare exponent as y
+		int constant = base; //declare a constant to be the base, to be used for calculation 
+		for (int i = 1; i < exponent; i++) //create a for loop, which declares i as 1 and increments it until it is not less than the exponent
+			//this ensures that the base is multiplied by itself for the correct amount of times
+		{ 
+			base *= constant; //multiply the base by the constant
+		}
+		System.out.println(base); //print out the result, stored in base variable
+	}
+	/**
+	 * expTwoNumbers method: takes in a Integer object base (x) and an Integer object exponent (y), and performs exponential calculation.
+	 * exponentiation is multiplying a number by itself a certain amount of times.
+	 * @param x
+	 * @param y
+	 */
+	public static void expTwoNumbers(Integer x, Integer y)
 	{
 		int base = x; //declare base as x
 		int exponent = y; //declare exponent as y
