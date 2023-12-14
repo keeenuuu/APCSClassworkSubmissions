@@ -1,5 +1,6 @@
 /**
  * MathTasks class: performs mathematical calculations using Math class, wrapper classes, and self-created class
+ * @author Keanu
  */
 class Dec07MathTasks
 {
