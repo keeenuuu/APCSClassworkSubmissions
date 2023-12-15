@@ -63,7 +63,7 @@ public class Dec14IfsAndLoops
 	{
 		if (x >= 0 && y >= 0) //if statement to check if both numbers are positive
 		{
-			for (int i = 0; i <= y; i++) //create a for loop, which declares i as 1 and increments it until it is not less than or equal to y
+			for (int i = 0; i <= y; i++) //create a for loop, which declares i as 0 and increments it until it is not less than or equal to y
 				//this ensures that the x is exponentiated for the correct amount of times
 			{
 				System.out.println(x + " to the " + i + " is " + (int)Math.pow(x, i)); //prints statement
@@ -87,7 +87,7 @@ public class Dec14IfsAndLoops
 		if (x >= 0) //if statement to check if x is a positive number
 		{
 			int constant = x; //declare constant as x, to hold original value during calculation
-			for (int i = 1; i < constant; i++) //create for loop, which declares i as zero and increments i until it is not less than the constant
+			for (int i = 1; i < constant; i++) //create for loop, which declares i as 1 and increments i until it is not less than the constant
 			{
 				x *= (constant-i); //multiply x by the difference of the constant and i
 				//subtracting the constant by the increment number ensures the number is multiplied by each previous number before it
