@@ -1,6 +1,6 @@
 import java.util.Scanner; //import Scanner
 /**
- * IfsAndLoops class:
+ * IfsAndLoops class: utilizes if statements and loops to perform tasks on user-inputted numbers:
  * @author Keanu
  */
 public class Dec14IfsAndLoops 
@@ -25,7 +25,8 @@ public class Dec14IfsAndLoops
 		
 		//TASK 4
 		System.out.println("");
-		getFact(x); //call getFact method and pass it x, to print the factorial of x
+		int factorial = getFact(x); //call getFact method and pass it x, to return the factorial of x
+		System.out.println("The factorial of " + x + " is " + factorial + "."); //print out the factorial
 	}
 	/**
 	 * printEvenOrOdd method: prints whether or not Integer x and Integer y are even or odd
@@ -62,7 +63,7 @@ public class Dec14IfsAndLoops
 	{
 		if (x >= 0 && y >= 0) //if statement to check if both numbers are positive
 		{
-			for (int i = 1; i <= y; i++) //create a for loop, which declares i as 1 and increments it until it is not less than or equal to y
+			for (int i = 0; i <= y; i++) //create a for loop, which declares i as 1 and increments it until it is not less than or equal to y
 				//this ensures that the x is exponentiated for the correct amount of times
 			{
 				System.out.println(x + " to the " + i + " is " + (int)Math.pow(x, i)); //prints statement
@@ -76,16 +77,27 @@ public class Dec14IfsAndLoops
 		}
 	}
 	/**
-	 * getFact method: prints the factorial of x
+	 * getFact method: returns the factorial of x if it is a positive number.
+	 * if it is a negative number, print out an error message and return -1.
 	 * @param x
+	 * @return the factorial, or -1 if the parameter is negative
 	 */
-	public static void getFact(Integer x)
+	public static int getFact(Integer x)
 	{
-		int constant = x;
-		for (int i = 1; i < constant; i++)
+		if (x >= 0) //if statement to check if x is a positive number
 		{
-			x *= (constant-i);
+			int constant = x; //declare constant as x, to hold original value during calculation
+			for (int i = 1; i < constant; i++) //create for loop, which declares i as zero and increments i until it is not less than the constant
+			{
+				x *= (constant-i); //multiply x by the difference of the constant and i
+				//subtracting the constant by the increment number ensures the number is multiplied by each previous number before it
+			}
+			return x; //return factorial
 		}
-		System.out.println(x);
+		else //else statement when x is not a positive number
+		{
+			System.out.println("Sorry, this computer is unable to compute the factorial of negative numbers."); //print error statement
+			return -1; //return -1
+		}
 	}
 }
