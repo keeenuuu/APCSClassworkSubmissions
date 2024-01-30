@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; //import Scanner
 /** 
  * DiceMathine class: rolls a user input's dice
  * @author Keanu
@@ -7,42 +7,66 @@ public class DiceMachine
 {
 	public static void main(String[] args) 
 	{
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Welcome to Dice Roller! Roll your dice below.\nUse the #d# format, and separate dice with a plus.\nYou can even add a modifier at the end!\n");
-		String input = scan.nextLine();
-		System.out.println("");
-		String noSpaces = removeSpaces(input);
-		splitDice(noSpaces);
-		scan.close();
+		Scanner scan = new Scanner(System.in); //open Scanner, named scan
+		System.out.println("Welcome to Dice Roller! Roll your dice below.\nUse the #d# format, and separate dice with a plus.\nYou can even add a modifier at the end!\n"); //give user prompt to input dice
+		String input = scan.nextLine(); //instantiate String, named input, which takes in the user's input
+		System.out.println(""); //line break
+		String noSpaces = removeSpaces(input); //instantiate String, named noSpaces, which calls removeSpaces method and passes it the input. This removes the spaces from the user input
+		System.out.println(noSpaces);
+		calculateTotal(noSpaces); //call calculateTotal method and pass it noSpaces. This will perform the dice rolling and totaling
+		scan.close(); //close scan
 	}
+	
 	/**
-	 * 
+	 * removeSpaces method: removes spaces from the user's input
+	 * @param str - the original user input
+	 * @return noSpaces - the user input without spaces
 	 */
 	public static String removeSpaces(String str)
 	{
-		int spaceIndex = 0; //declare int spaceIndex to be 0 (this will be used to keep track of the previous space's index, for concatenation)
-		String noSpaces = new String(""); //instantiate a new String, named noSpaces, which will store the str value without spaces
-		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of str (using length() method)
-		//this ensures the loop runs the proper amount of times
+		int spaceCount = countSpaces(str);
+		String noSpaces = new String("");
+		for (int i = 0; i < spaceCount; i++)
 		{
-			if (str.charAt(i) == ' ') //if statement to check if the character at the ith index of the String is a space
-			//this ensures each character of the String is checked
+			if (str.indexOf(' ') > 0) 
 			{
-				noSpaces = noSpaces.concat(str.substring(spaceIndex + 1, i)); //concatenate noSpaces to include the str value from the previous space's index to the current index
-				//(this will cause the first character of str and the characters after the last space to be omitted. will resolve later)
-				spaceIndex = i; //reassigns spaceIndex as the current index (stores current space's index to be used during next iteration)
+				noSpaces = noSpaces.concat(str.substring(0, str.indexOf(' ')));
+				str = str.substring(str.indexOf(' ')+1);
 			}
 		}
-		noSpaces = String.valueOf(str.charAt(0)).concat(noSpaces).concat(str.substring(spaceIndex + 1)); //constructs final noSpaces value through concatenation
-		//includes 1st character of str and characters after the last space 
-		return noSpaces; //return noSpaces
+		noSpaces = noSpaces.concat(str);
+		return noSpaces;
 	}
 	
-	public static void splitDice(String str)
+	/**
+	 * countSpaces method
+	 * @param str
+	 * @return count
+	 */
+	public static int countSpaces(String str)
 	{
-		String original = str;
+		int count = 0; //declare an int, named count, to keep track of the number of occurrences of the char in the String
+		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of the String (using length() method)
+		//this ensures the loop runs the proper amount of times
+		{
+			if (str.charAt(i) == ' ') //if statement to check if the character at the ith index of the String matches the char value (using charAt() method)
+			//this ensures each character of the String is checked
+			{
+				count++; //adds one to the character count when if statement is true
+			}
+		}
+		return count; //returns character count
+	}
+	
+	/**
+	 * calculateTotal method
+	 * @param str
+	 */
+	public static void calculateTotal(String str)
+	{
+		int diceCount = countDice(str) + 1;
 		int total = 0;
-		for (int i = 1; i <= countPlus(original) + 1; i++)
+		for (int i = 1; i <= diceCount; i++)
 		{
 			int d = str.indexOf('d');
 			int plus = str.indexOf('+');
@@ -53,7 +77,7 @@ public class DiceMachine
 				int faces = Integer.valueOf(str.substring(d+1, plus));
 				total += rollDice(count, faces);
 				str = str.substring(plus+1);
-				System.out.println("You rolled " + count + " " + faces + "-faced die.");
+				System.out.println("You rolled " + count + " " + faces + "-faced dice.");
 			}
 
 			else if (d > 0 && plus == -1) 
@@ -62,7 +86,7 @@ public class DiceMachine
 				int faces = Integer.valueOf(str.substring(d+1));
 				total += rollDice(count, faces); 
 				str = "";
-				System.out.println("You rolled " + count + " " + faces + "-faced die.");	
+				System.out.println("You rolled " + count + " " + faces + "-faced dice.");	
 			}
 			else if (d == -1 && plus == -1)
 			{
@@ -74,7 +98,12 @@ public class DiceMachine
 		System.out.println("Your final result is " + total + "!");
 	}
 	
-	public static int countPlus(String str)
+	/**
+	 * countDice method
+	 * @param str
+	 * @return count
+	 */
+	public static int countDice(String str)
 	{
 		int count = 0; //declare an int, named count, to keep track of the number of occurrences of the char in the String
 		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of the String (using length() method)
@@ -88,6 +117,13 @@ public class DiceMachine
 		}
 		return count; //returns character count
 	}
+	
+	/**
+	 * rollDice method
+	 * @param a
+	 * @param b
+	 * @return value
+	 */
 	public static int rollDice(int a, int b)
 	{
 		int value = 0; //the final value of all the dice rolls
