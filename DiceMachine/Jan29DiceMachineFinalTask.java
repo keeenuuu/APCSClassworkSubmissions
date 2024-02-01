@@ -74,63 +74,61 @@ public class DiceMachine
 				int faces = Integer.valueOf(str.substring(d+1, plus)); //declare int, named faces, which takes the integer value of the user's input from the index succeeding d to the index of the plus character. This stores the faces of the dice that will be rolled
 				total += rollDice(count, faces); //call method rollDice, passing the dice count and the number of faces for each dice, and adding it to the total
 				str = str.substring(plus+1); //reassign the user's input without spaces to be everything from the plus. This removes the dice that was checked and retains everything else to be checked
-				System.out.println("You rolled " + count + " " + faces + "-faced dice.");
+				System.out.println("You rolled " + count + " " + faces + "-faced dice."); //print statement telling user which dice was rolled, noting its count and faces
 			}
 
-			else if (d > 0 && plus == -1) 
+			else if (d > 0 && plus == -1) //else if statement to check if the index of d is greater than 0, and the index of the plus character is -1 (there is no plus character). Practically, this checks if there is only one dice remaining in the user's input (with no modifier)
 			{
-				int count = Integer.valueOf(str.substring(0, d));
-				int faces = Integer.valueOf(str.substring(d+1));
-				total += rollDice(count, faces); 
-				str = "";
-				System.out.println("You rolled " + count + " " + faces + "-faced dice.");	
+				int count = Integer.valueOf(str.substring(0, d)); //declare int, named count, which takes the integer value of the user's input from the beginning up to the index of d. This stores the count of the dice that will be rolled
+				int faces = Integer.valueOf(str.substring(d+1)); //declare int, named faces, which takes the integer value of the user's input from the index succeeding d onward. This stores the faces of the dice that will be rolled
+				total += rollDice(count, faces); //call method rollDice, passing the dice count and the number of faces for each dice, and adding it to the total
+				str = ""; //reassign the user's input to default value (nothing)
+				System.out.println("You rolled " + count + " " + faces + "-faced dice."); //print statement telling user which dice was rolled, noting its count and faces	
 			}
-			else if (d == -1 && plus == -1)
+			else if (d == -1 && plus == -1) //else if statement to check if the index of d and the plus character is -1 (there is no d or plus character). Practically, this checks if only a modifier is present
 			{
-				int modifier = Integer.valueOf(str);
-				total += modifier;
-				System.out.println("You added " + modifier + ".");
+				int modifier = Integer.valueOf(str); //declare int, named modifier, which takes the integer value of the remaining portion of the user's input (the modifier)
+				total += modifier; //add the modifier to the total
+				System.out.println("You added " + modifier + "."); //print statement telling user the addition of the modifier, noting the modifier's value
 			}
 		}
-		System.out.println("\nYour final result is " + total + "!");
+		System.out.println("\nYour final result is " + total + "!"); //print out the final result
 	}
 	
 	/**
-	 * countDice method
-	 * @param str
-	 * @return count
+	 * countDice method: counts the amount of dice and modifiers in a user's input
+	 * @param str, the user's input without spaces
+	 * @return count, the amount of dice and modifiers in the user's input
 	 */
 	public static int countDice(String str)
 	{
-		int count = 0; //declare an int, named count, to keep track of the number of occurrences of the char in the String
-		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of the String (using length() method)
-		//this ensures the loop runs the proper amount of times
+		int count = 0; //declare int, named count, to store the number of occurrences of the plus character in the user's input. Default value is zero
+		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of the user's input. This ensures the loop runs the proper amount of times
 		{
-			if (str.charAt(i) == '+') //if statement to check if the character at the ith index of the String matches the char value (using charAt() method)
+			if (str.charAt(i) == '+') //if statement to check if the character at the ith index of the String is a plus character
 			//this ensures each character of the String is checked
 			{
-				count++; //adds one to the character count when if statement is true
+				count++; //adds one to the plus count when character being checked is a plus
 			}
 		}
-		count ++;
-		return count; //returns character count
+		count ++; //add one to the plus count (this is because the amount of dice and modifiers will be one greater than the amount of plus characters)
+		return count; //returns the amount of dice and modifiers in the user's input
 	}
 	
 	/**
-	 * rollDice method
-	 * @param a
-	 * @param b
-	 * @return value
+	 * rollDice method: rolls a certain amount of a certain-faced dice given by the user's input
+	 * @param a, the amount of dice being rolled
+	 * @param b, the face of the dice being rolled
+	 * @return value, the result of the dice roll
 	 */
 	public static int rollDice(int a, int b)
 	{
-		int value = 0; //the final value of all the dice rolls
-		for (int i = 1; i <= a; i++) //for loop which declares an int i and increments it by 1 until it is not less than or equal to a
+		int value = 0; //declare int, named value, which stores the value of the dice rolls. Default value is zero
+		for (int i = 0; i < a; i++) //for loop, which declares int i as zero and increments it by 1 until it is not less than the amount of dice
 		//this ensures that the correct number of dice is rolled
 		{
-			value += (b * Math.random() + 1); //uses random method, multiplied by b and added to 1, to generate a random number between 1 and the face number
-			//the result of each die is added to the final value
+			value += (b * Math.random() + 1); //generates random value between 0 and 1, multiplies it by the face value, and adds one, ensuring the result is within face parameters. The result of each die is added to the final value
 		}	
-		return value;
+		return value; //returns the result of the dice roll
 	}
 }
