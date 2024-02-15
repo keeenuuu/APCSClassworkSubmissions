@@ -47,6 +47,6 @@ public class Student
   */
   public void introduceSelf()
   {
-    System.out.println("Hello! I am a student in " + this.gradeLevel + ". My name is " + this.name + ". My GPA is " + getGPA() + "."); //print statement
+    System.out.println("Hello! I am a student in grade" + this.gradeLevel + ". My name is " + this.name + ". My GPA is " + getGPA() + "."); //print statement
   }
 }
