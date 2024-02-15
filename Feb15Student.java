@@ -37,16 +37,16 @@ public class Student
   * getGPA functionality: calculates and returns the overall GPA of a Student object, derived from the average of the three GPA attributes.
   * @return the Student object's overall GPA.
   */
-  public static double getGPA()
+  public double getGPA()
   {
-    return (scienceGrade + mathGrade + theologyGrade) / 3; //adds the three GPA attributes of the Student objects, divides the sum by 3 to find the average, and returns the result.
+    return (this.scienceGrade + this.mathGrade + this.theologyGrade) / 3; //adds the three GPA attributes of the Student objects, divides the sum by 3 to find the average, and returns the result.
   }
 
   /**
   * introduceSelf functionality: prints a statement, stating the Student object's grade level, name, and overall GPA.
   */
-  public static void introduceSelf()
+  public void introduceSelf()
   {
-    System.out.println("Hello! I am a student in " + gradeLevel + ". My name is " + name + ". My GPA is " + getGPA + "."); //print statement
+    System.out.println("Hello! I am a student in " + this.gradeLevel + ". My name is " + this.name + ". My GPA is " + getGPA() + "."); //print statement
   }
 }
