@@ -5,16 +5,16 @@
 */
 public class Student
 {
-  /**
+  /*
   * attributes of a Student object: name, gradeLevel, scienceGrade, mathGrade, theologyGrade.
   * The grade level stores a number from 1 to 12.
   * The grades store a number from 0.0 to 4.0. 
   */
-  private String name; //declare String name
-  private int gradeLevel; //decalre int gradeLevel
-  private double scienceGrade; //declare double scienceGrade
-  private double mathGrade; //declare double mathGrade
-  private double theologyGrade; //declare double theologyGrade
+  private String name;
+  private int gradeLevel;
+  private double scienceGrade;
+  private double mathGrade;
+  private double theologyGrade;
 
   /**
   * Student constructor: instantiates a Student object.
