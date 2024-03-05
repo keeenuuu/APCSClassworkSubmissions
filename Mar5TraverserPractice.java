@@ -1,4 +1,7 @@
 /*
+  Traverser Practice
+  @author Keanu
+  
   For each method, answer the following tasks:
 
   1. What is passed to the method?
