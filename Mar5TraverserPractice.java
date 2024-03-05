@@ -34,27 +34,35 @@ public static double[] traverserOne( int[] arr ) //5. declare new method, named 
 * 2. the method returns arr.
 * 3. the integer index is used to traverse the array.
 * 4. this method adds the integer n to each element of the array.
+* 6. the purpose of the method is to increase the elements of an array by a specified value.
 */
 public static int[] traverserTwo( int[] arr , int n ) //5. declare new method, named traverserTwo, which is passed an integer array, arr, and an integer, n, and returns an integer array
 	{
 		for (int index = 0; index < arr.length; index++) //5. create a for loop, which sets integer index to 0 and increments it until it is not less than the length of the array. this is used for traversing
 		{
-			arr[index] = ( arr[index] + n ); //5. the index'th element of the array
+			arr[index] = ( arr[index] + n ); //5. the index'th element of the array is increased by the value of n
 		}
 		
-		return arr;
+		return arr; //5. returns the new, updated array
 	}
 	
-	public static int traverserThree( double[] arr )
+/**
+* 1. the method is passed a double array, arr.
+* 2. the method returns c, an integer.
+* 3. the integer j is used to traverse the array.
+* 4. this method counts how many elements of an array are equal to 4.0.
+* 6. the puepose of the method is to count the number of time 4.0 appears in a specified array.
+*/
+public static int traverserThree( double[] arr ) //5. declare new method, named transverserThree, which is passed a double array, arr, and returns an integer
 	{
-		int c = 0;
+		int c = 0; //5. declare an integer, named c, and assign it 0
 		
-		for (int j = 0; j <= arr.length-1; j++)
+		for (int j = 0; j <= arr.length-1; j++) //5. create for loop, which sets integer j to 0 and increments it until it is not less than or equal to the array length minus 1. this is used for traversing
 		{
-			if ( arr[j] == 4.0 )
+			if ( arr[j] == 4.0 ) //5. if statement to check if the jth element of the array is equal to 4.0
 			{
-				c++;
+				c++; //5. increments c by 1 if the jth element is equal to 4.0
 			}
 		}
-		return c;
+		return c; //5. returns final value of c
 	}
