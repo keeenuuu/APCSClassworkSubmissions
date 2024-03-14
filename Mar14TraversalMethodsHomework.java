@@ -27,7 +27,7 @@ public class Mar14TraversalMethodsHomework
 	}
 
 	/**
-	 * findHighestInt method: finds the highest integer value in an array
+	 * 1. findHighestInt method: finds the highest integer value in an array
 	 * @param arr, the integer array being checked
 	 * @return the highest value of the array
 	 */
@@ -46,7 +46,7 @@ public class Mar14TraversalMethodsHomework
 	}
 	
 	/**
-	 * findDoubleAverage method: finds the average value out a set of double array values
+	 * 2. findDoubleAverage method: finds the average value out a set of double array values
 	 * @param arr, the double array being checked
 	 * @return the average double value
 	 */
@@ -62,7 +62,7 @@ public class Mar14TraversalMethodsHomework
 	}
 	
 	/**
-	 * checkForAnyEvens method: checks if an integer array has any even values
+	 * 3. checkForAnyEvens method: checks if an integer array has any even values
 	 * @param arr, the integer array being checked
 	 * @return whether or not there is an even value in the array
 	 */
@@ -80,7 +80,7 @@ public class Mar14TraversalMethodsHomework
 	}
 	
 	/**
-	 * checkForAllEvens method: checks if an integer array has all even values
+	 * 4. checkForAllEvens method: checks if an integer array has all even values
 	 * @param arr, the integer array being checked
 	 * @return whether or not all values in an array are even
 	 */
@@ -98,7 +98,7 @@ public class Mar14TraversalMethodsHomework
 	}
 	
 	/**
-	 * checkForThreeConsecutiveEquals method: checks if three consecutive, equal double values appear in a double array
+	 * 5. checkForThreeConsecutiveEquals method: checks if three consecutive, equal double values appear in a double array
 	 * @param arr, the double array being checked
 	 * @return whether or not there are three consecutive, equal values
 	 */
