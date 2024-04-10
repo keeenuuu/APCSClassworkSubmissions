@@ -26,7 +26,7 @@ public class Apr8InsertionSort
 				int temp = last;
 				arr[i+1] = arr[i];
 				arr[i] = temp;
-				last = arr[i];
+				last = arr[i]; //reassign last value to the current element being checked
 			}
 		}
 	}
